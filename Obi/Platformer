@@ -31,3 +31,15 @@ script.Parent.Touched:Connect(function(hit)
 	hit.Parent:WaitForChild("Humanoid").JumpPower = 200
 	hit.Parent:WaitForChild("Humanoid").Jump = true
 end)
+
+*SLIDE*
+brick = script.Parent
+
+function OnTouched(part)
+	local humanoid = part.Parent:FindFirstChild("Humanoid") 
+	if (humanoid ~= nil) then
+	humanoid.Sit = true
+	end
+end
+
+script.Parent.Touched:connect(OnTouched)

@@ -1,0 +1,33 @@
+**KILL BRICKS**
+local Kill_Brick = script.Parent
+
+function Kill(touch)
+	if touch.Parent:FindFirstChild("Humanoid") then
+		touch.Parent:BreakJoints()
+	end
+end
+
+Kill_Brick.Touched:Connect(Kill)
+
+script.Parent.Touched:Connect(function(hit)
+	local kill = hit.Parent:FindFirstChildWhichIsA("Humanoid")
+	if kill then
+		kill.Health = 0
+	end
+end)
+
+
+**SPINNER**
+local rotating_platform = script.Parent
+
+while true do
+	rotating_platform.CFrame = rotating_platform.CFrame * CFrame.Angles(0,10,0)
+	rotating_platform.CanCollide = true
+	wait(0.1)
+end
+
+**TRAMPOLINE**
+script.Parent.Touched:Connect(function(hit)
+	hit.Parent:WaitForChild("Humanoid").JumpPower = 200
+	hit.Parent:WaitForChild("Humanoid").Jump = true
+end)

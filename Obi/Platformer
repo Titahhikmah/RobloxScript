@@ -1,4 +1,4 @@
-KILL BRICKS
+#KILL BRICKS
 local Kill_Brick = script.Parent
 
 function Kill(touch)
@@ -17,7 +17,7 @@ script.Parent.Touched:Connect(function(hit)
 end)
 
 
-SPINNER
+#SPINNER
 local rotating_platform = script.Parent
 
 while true do
@@ -26,15 +26,20 @@ while true do
 	wait(0.1)
 end
 
-TRAMPOLINE
+#TRAMPOLINE
 script.Parent.Touched:Connect(function(hit)
 	hit.Parent:WaitForChild("Humanoid").JumpPower = 200
 	hit.Parent:WaitForChild("Humanoid").Jump = true
 end)
 
-SLIDE
-brick = script.Parent
+#SLIPPERY FLOOR
+local SlipBlock = script.Parent
+SlipBlock.Touched:Connect(function(hit)
+	SlipBlock.Velocity = hit.CFrame.LookVector * 10
+end)
 
+#SLIDE (not smooth)
+brick = script.Parent
 function OnTouched(part)
 	local humanoid = part.Parent:FindFirstChild("Humanoid") 
 	if (humanoid ~= nil) then
@@ -44,7 +49,15 @@ end
 
 script.Parent.Touched:connect(OnTouched)
 
-RUN AND ESCAPE
+#CHANGE COLOR RANDOM
+local colorchange=script.Parent
+function change_color()
+	colorchange.Color = Color3.new(math.random(), math.random(), math.random())
+	colorchange.Material = Enum.Material.Neon
+end
+colorchange.Touched:Connect(change_color) 
+
+#RUN AND ESCAPE
 local wall = script.Parent
 wall.Touched:Connect(function(player)
 	if player.Parent:FindFirstChild("Humanoid") then

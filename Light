@@ -1,0 +1,63 @@
+#TRAFFIC LIGHT
+--local traffic = game.Workspace.Traffic_Light --from general to specific (parent to child)
+--local traffic = script.Parent --go to script from spesific to general (child to parent)
+
+while true do
+	traffic.Merah.Material = Enum.Material.Neon
+	traffic.Kuning.Material = Enum.Material.Plastic
+	traffic.Hijau.Material = Enum.Material.Plastic
+	traffic.Merah.SpotLight.Enabled = true
+	traffic.Kuning.SpotLight.Enabled = false
+	traffic.Hijau.SpotLight.Enabled = false
+	wait(10)
+	traffic.Merah.Material = Enum.Material.Plastic
+	traffic.Kuning.Material = Enum.Material.Neon
+	traffic.Hijau.Material = Enum.Material.Plastic
+	traffic.Merah.SpotLight.Enabled = false
+	traffic.Kuning.SpotLight.Enabled = true
+	traffic.Hijau.SpotLight.Enabled = false
+	wait(3)
+	traffic.Merah.Material = Enum.Material.Plastic
+	traffic.Kuning.Material = Enum.Material.Plastic
+	traffic.Hijau.Material = Enum.Material.Neon
+	traffic.Merah.SpotLight.Enabled = false
+	traffic.Kuning.SpotLight.Enabled = false
+	traffic.Hijau.SpotLight.Enabled = true
+	wait(10)
+	traffic.Merah.Material = Enum.Material.Plastic
+	traffic.Kuning.Material = Enum.Material.Neon
+	traffic.Hijau.Material = Enum.Material.Plastic
+	traffic.Merah.SpotLight.Enabled = false
+	traffic.Kuning.SpotLight.Enabled = true
+	traffic.Hijau.SpotLight.Enabled = false
+	wait(3)
+end
+
+#PROXIMITY LIGHT
+--local Lampu = game.Workspace.Light_Proximity --the script accesses what's inside the light proximity folder from the most general to the most specific
+--local Lampu = script.Parent.Parent --access script from the most specific to the most general
+
+Lampu.Tiang_Lampu. ProximityPrompt.Triggered:Connect(function()
+	if Lampu.Lampu.SpotLight.Enabled == true then
+		Lampu.Lampu.SpotLight.Enabled = false
+	else
+		Lampu.Lampu.SpotLight.Enabled = true
+	end
+end)
+
+#MOUSE CLICK LIGHT
+--ON BUTTON
+--local lamp = script.Parent.Parent --from child to parent
+--local lamp = game.Workspace.Light_ClickDetector --from parent to child
+
+lamp.On.ClickDetector.MouseClick:Connect(function()
+	lamp.Lampu.SpotLight.Enabled=true
+end)
+
+OFF BUTTON
+--local lamp = script.Parent.Parent --from child to parent
+--local lamp = game.Workspace.Light_ClickDetector --from parent to child
+
+lamp.Off.ClickDetector.MouseClick:Connect(function()
+	lamp.Lampu.SpotLight.Enabled=false
+end)

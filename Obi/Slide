@@ -1,0 +1,18 @@
+--Make sure the slide part is slippery and the seat is facing forward.
+local triger=game.Workspace.Slide.Trigger
+local duduk=script.Parent
+local pos=duduk.CFrame
+duduk.Anchored=true 
+
+triger.Touched:Connect(function(part)
+	local human=part.Parent:FindFirstChild("Humanoid")
+	if human then
+		wait(1)
+		duduk.Anchored=false
+		wait(2)
+		human.Jump = true
+		wait(0.2)
+		duduk.Anchored=true
+		duduk.CFrame=pos
+	end
+end)

@@ -1,0 +1,17 @@
+-- Make sure it is in the same folder with all parts
+-- This script can access all the parts that you want.
+
+function move(part, x, y, z)
+	for i = 1, 4 do
+		part.Position += Vector3.new(x, y, z)
+		wait(0.05)
+	end
+end
+
+while true do
+	move (script.Parent.Part1, 0, 1, 0)
+	move (script.Parent.Part2, 0, -1, 0)
+	wait(1)
+	move (script.Parent.Part1, 0, -1, 0)
+	move (script.Parent.Part2, 0, 1, 0)
+end

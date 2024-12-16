@@ -1,0 +1,49 @@
+local laser1 = script.Parent.Laser1
+local laser2 = script.Parent.Laser2
+local laser3 = script.Parent.Laser3
+local laser4 = script.Parent.Laser4
+local laser5 = script.Parent.Laser5
+local laser6 = script.Parent.Laser6
+
+function Kill(touch)
+	if touch.Parent:FindFirstChild("Humanoid") then
+		touch.Parent:BreakJoints()
+	end
+	while true do
+		laser2.Transparency = 0
+		laser2.CanCollide = true
+		laser3.Transparency = 0
+		laser3.CanCollide = true
+		laser5.Transparency = 0
+		laser5.CanCollide = true
+		laser1.Transparency = 1
+		laser1.CanCollide = false
+		laser4.Transparency = 1
+		laser4.CanCollide = false
+		laser6.Transparency = 1
+		laser6.CanCollide = false
+		wait(math.random(2, 5))
+		laser1.Transparency = 0
+		laser1.CanCollide = true
+		laser4.Transparency = 0
+		laser4.CanCollide = true
+		laser6.Transparency = 0
+		laser6.CanCollide = true
+		laser2.Transparency = 1
+		laser2.CanCollide = false
+		laser3.Transparency = 1
+		laser3.CanCollide = false
+		laser5.Transparency = 1
+		laser5.CanCollide = false
+		wait(math.random(2, 5))
+	end
+end
+
+
+laser1.Touched:Connect(Kill)
+laser2.Touched:Connect(Kill)
+laser3.Touched:Connect(Kill)
+laser4.Touched:Connect(Kill)
+laser5.Touched:Connect(Kill)
+laser6.Touched:Connect(Kill)
+

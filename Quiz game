@@ -1,0 +1,148 @@
+--SCRIPT DOOR
+
+WRONG ANSWER
+script.Parent.doorA.Touched:Connect(function(player)
+	player.Parent.Humanoid.Health = 0
+end)
+
+WRONG ANSWER
+script.Parent.doorB.Touched:Connect(function(player)
+	player.Parent.Humanoid.Health = 0
+end)
+
+TRUE ANSWER
+Unchecklist Cancollide
+
+--SCRIPT POINT
+points = 0
+onTouched = true
+-- kalau ini terlalu susah gaperlu ditampilin point nya
+game.Workspace.wall1.doorC.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall1.doorC.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall1.doorC.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall2.doorC.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall2.doorC.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall2.doorC.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall3.doorA.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall3.doorA.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall3.doorA.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall4.doorB.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall4.doorB.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall4.doorB.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall5.doorA.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall5.doorA.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall5.doorA.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall6.doorB.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall6.doorB.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall6.doorB.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall7.doorA.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall7.doorA.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall7.doorA.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall8.doorA.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall8.doorA.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall8.doorA.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall9.doorC.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall9.doorC.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall9.doorC.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.wall10.doorB.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") and onTouched == true then
+		points += 1
+		script.Parent.ScreenGui.Frame.textscore.Text = points
+		game.Workspace.wall10.doorB.BrickColor = BrickColor.new("Bright green")
+		onTouched = false
+		wait(3)
+		onTouched = true
+		game.Workspace.wall10.doorB.BrickColor = BrickColor.new("Pastel blue-green")
+	end 
+end)
+
+game.Workspace.finishline.PrimaryPart.Touched:Connect(function(player)
+	if player.Parent:FindFirstChild("Humanoid") then
+		script.Parent.ScreenGui.Frame2.Visible = true
+	end 
+end)
+
+
+
+

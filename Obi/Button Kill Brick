@@ -1,0 +1,14 @@
+local kill = script.Parent
+-- kill is the name of your variable
+-- because the script inside clickdetector
+-- we will use the clickdetector
+
+
+kill.MouseClick:Connect(function(touch) 
+	local event_touch = touch.Character.Humanoid 
+	event_touch.Health = 0
+end)
+
+--touch is parameter of your function
+--player is the name of the local variable to store humanoid
+

@@ -1,0 +1,16 @@
+btnOn = false
+
+script.Parent.Part.ClickDetector.MouseClick:Connect(function()
+	if btnOn == false then
+		script.Parent.off.Transparency = 1
+		script.Parent.on.Transparency = 0
+		wait(8)
+		workspace.Lobby.Door:Destroy()
+		btnOn = true
+	else
+		script.Parent.off.Transparency = 0
+		script.Parent.on.Transparency = 1
+		btnOn = false
+	end
+	
+end)

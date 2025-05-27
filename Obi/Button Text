@@ -1,0 +1,15 @@
+btnOn = false
+
+script.Parent.Part.ClickDetector.MouseClick:Connect(function()
+	if btnOn == false then
+		workspace.Lobby.Board_1.SurfaceGui.TextLabel.Text = "Well, try another button"
+		script.Parent.off.Transparency = 1
+		script.Parent.on.Transparency = 0
+		btnOn = true
+	else
+		script.Parent.off.Transparency = 0
+		script.Parent.on.Transparency = 1
+		btnOn = false
+	end
+	
+end)

@@ -1,0 +1,12 @@
+script.Parent.Touched:Connect(function(hit) 
+	if hit.Parent:FindFirstChild("HumanoidRootPart") then
+		hit.Parent.HumanoidRootPart.Position = Vector3.new(-46.7, 2,-16.7) --target position (higher than the part)
+	end
+	end)
+
+--or
+script.Parent.Touched:Connect(function(hit) 
+	if hit and hit.Parent and hit.Parent:FindFirstChild("HumanoidRootPart") then
+		hit.Parent.HumanoidRootPart.CFrame = CFrame.new(-46.7, 0.5, -16.7) --Put position you want player to teleport to here (higher than the part)
+	end
+end)
